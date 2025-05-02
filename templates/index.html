@@ -1,0 +1,408 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container mx-auto px-4 py-6">
+    <!-- Progress Header -->
+    <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div>
+            <div class="badge badge-accent mb-2">Grammaire</div>
+            <h1 class="text-3xl font-bold">📚 Les Compléments d'Objet Direct (COD)</h1>
+            <p class="text-base-content/70 mt-2">Niveau: Intermédiaire • Durée: ~15 min</p>
+        </div>
+        <div class="mt-4 md:mt-0">
+            <div class="flex flex-col items-end gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="text-sm font-medium">Progression: 2/5</span>
+                    <div class="tooltip" data-tip="Votre progression">
+                        <i data-lucide="help-circle" class="w-4 h-4 opacity-50"></i>
+                    </div>
+                </div>
+                <progress class="progress progress-primary w-56" value="40" max="100"></progress>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction Card -->
+    <div class="card bg-base-100 shadow-xl mb-8">
+        <div class="card-body">
+            <h2 class="card-title text-2xl">🎯 Objectifs d'apprentissage</h2>
+            <div class="my-4">
+                <ul class="steps steps-vertical md:steps-horizontal w-full">
+                    <li class="step step-primary">Identifier un COD</li>
+                    <li class="step step-primary">Comprendre son rôle</li>
+                    <li class="step">Remplacer par un pronom</li>
+                    <li class="step">Maîtriser les exceptions</li>
+                </ul>
+            </div>
+            <div class="bg-base-200 p-4 rounded-lg">
+                <p>
+                    Les compléments d'objet directs (COD) reçoivent <span class="underline decoration-primary">directement l'action du verbe</span>. Ils répondent aux questions <kbd class="kbd kbd-sm">qui ?</kbd> ou <kbd class="kbd kbd-sm">quoi ?</kbd> posées après le verbe.
+                </p>
+                <p class="mt-2">
+                    Dans cette leçon interactive, nous allons explorer les COD avec des exemples pratiques et des exercices.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Tabs -->
+    <div class="tabs tabs-boxed mb-4">
+        <button class="tab tab-active" onclick="openSection('theorie')">📖 Théorie</button>
+        <button class="tab" onclick="openSection('exemples')">🔍 Exemples</button>
+        <button class="tab" onclick="openSection('exercices')">✏️ Exercices</button>
+        <button class="tab" onclick="openSection('astuces')">💡 Astuces</button>
+    </div>
+
+    <!-- Théorie Section -->
+    <div id="theorie" class="section-content">
+        <div class="card bg-base-100 shadow-xl mb-6">
+            <div class="card-body">
+                <div class="flex items-center gap-3">
+                    <div class="avatar">
+                        <div class="bg-primary/10 text-primary rounded-full w-14 h-14 flex items-center justify-center">
+                            <div class="flex items-center justify-center w-full h-full">📖</div>
+                        </div>
+                    </div>
+                    <h2 class="card-title text-2xl">Qu'est-ce qu'un COD?</h2>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="space-y-4">
+                    <p>
+                        Le complément d'objet direct (COD) est un élément essentiel de la phrase qui:
+                    </p>
+                    
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Complète directement le verbe <span class="font-semibold text-primary">(sans préposition)</span></li>
+                        <li>Répond aux questions <kbd class="kbd kbd-sm">qui ?</kbd> ou <kbd class="kbd kbd-sm">quoi ?</kbd></li>
+                        <li>Est souvent placé après le verbe dans une phrase déclarative</li>
+                        <li>Peut être remplacé par un pronom spécifique</li>
+                    </ul>
+                    
+                    <div class="alert bg-base-200 shadow-sm">
+                        <i data-lucide="lightbulb" class="w-6 h-6 text-warning"></i>
+                        <span>Pour trouver le COD, posez-vous la question: "<strong>sujet + verbe + qui/quoi ?</strong>"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exemples Section -->
+    <div id="exemples" class="section-content hidden">
+        <div class="card bg-base-100 shadow-xl mb-6">
+            <div class="card-body">
+                <div class="flex items-center gap-3">
+                    <div class="avatar">
+                        <div class="bg-info/10 text-info rounded-full w-14 h-14 flex items-center justify-center">
+                            <div class="flex items-center justify-center w-full h-full">🔍</div>
+                        </div>
+                    </div>
+                    <h2 class="card-title text-2xl">Exemples en contexte</h2>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="collapse collapse-arrow bg-base-200 mb-4">
+                    <input type="radio" name="example-accordion" checked="checked" /> 
+                    <div class="collapse-title text-lg font-medium">
+                        Exemple 1: COD simple
+                    </div>
+                    <div class="collapse-content bg-base-100 rounded-b-box"> 
+                        <div class="chat chat-start">
+                            <div class="chat-bubble chat-bubble-primary">
+                                Je mange <span class="underline decoration-secondary decoration-2">une pomme</span>.
+                            </div>
+                        </div>
+                        <div class="bg-base-200 p-4 rounded-lg mt-4">
+                            <p>❓ Question: <strong>"Je mange quoi ?"</strong></p>
+                            <p>✅ Réponse: <strong>"une pomme"</strong></p>
+                            <p class="mt-2">👉 <strong>"une pomme"</strong> est donc le COD du verbe "manger".</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapse collapse-arrow bg-base-200 mb-4">
+                    <input type="radio" name="example-accordion" /> 
+                    <div class="collapse-title text-lg font-medium">
+                        Exemple 2: COD avec un pronom
+                    </div>
+                    <div class="collapse-content bg-base-100 rounded-b-box"> 
+                        <div class="chat chat-start">
+                            <div class="chat-bubble chat-bubble-primary">
+                                Je <span class="underline decoration-secondary decoration-2">la</span> mange.
+                            </div>
+                        </div>
+                        <div class="bg-base-200 p-4 rounded-lg mt-4">
+                            <p>🔄 Ici, <strong>"la"</strong> est un pronom qui remplace "une pomme".</p>
+                            <p class="mt-2">⚠️ Notez que le pronom COD se place <strong>avant</strong> le verbe.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapse collapse-arrow bg-base-200">
+                    <input type="radio" name="example-accordion" /> 
+                    <div class="collapse-title text-lg font-medium">
+                        Exemple 3: COD en phrase complexe
+                    </div>
+                    <div class="collapse-content bg-base-100 rounded-b-box"> 
+                        <div class="chat chat-start">
+                            <div class="chat-bubble chat-bubble-primary">
+                                Je sais <span class="underline decoration-secondary decoration-2">qu'il viendra</span>.
+                            </div>
+                        </div>
+                        <div class="bg-base-200 p-4 rounded-lg mt-4">
+                            <p>❓ Question: <strong>"Je sais quoi ?"</strong></p>
+                            <p>✅ Réponse: <strong>"qu'il viendra"</strong></p>
+                            <p class="mt-2">👉 Parfois, le COD peut être une proposition complète.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercices Section -->
+    <div id="exercices" class="section-content hidden">
+        <div class="card bg-base-100 shadow-xl mb-6">
+            <div class="card-body">
+                <div class="flex items-center gap-3">
+                    <div class="avatar">
+                        <div class="bg-success/10 text-success rounded-full w-14 h-14 flex items-center justify-center">
+                            <div class="flex items-center justify-center w-full h-full">✏️</div>
+                        </div>
+                    </div>
+                    <h2 class="card-title text-2xl">À vous de jouer!</h2>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <!-- Exercice 1 -->
+                <div class="mb-8">
+                    <h3 class="font-bold text-lg mb-4">🔍 Exercice 1: Identifiez le COD</h3>
+                    <p class="mb-4">Pour chaque phrase, cliquez sur le mot ou groupe de mots qui constitue le COD:</p>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-base-200 p-4 rounded-lg">
+                            <p class="mb-2 font-medium">1. Marie regarde la télévision.</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm">Marie</button>
+                                <button class="btn btn-sm">regarde</button>
+                                <button class="btn btn-sm btn-success" onclick="markCorrect(this)">la télévision</button>
+                            </div>
+                            <div class="hidden mt-3 text-success" id="answer1">
+                                <i data-lucide="check-circle" class="inline w-4 h-4 mr-1"></i> Correct! "La télévision" est le COD.
+                            </div>
+                        </div>
+                        
+                        <div class="bg-base-200 p-4 rounded-lg">
+                            <p class="mb-2 font-medium">2. Nous aimons les fleurs.</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm">Nous</button>
+                                <button class="btn btn-sm">aimons</button>
+                                <button class="btn btn-sm btn-success" onclick="markCorrect(this)">les fleurs</button>
+                            </div>
+                        </div>
+                        
+                        <!-- More exercises follow the same pattern -->
+                    </div>
+                </div>
+                
+                <!-- Exercice 2 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">🔄 Exercice 2: Remplacez par un pronom</h3>
+                    <p class="mb-4">Sélectionnez le pronom correct qui remplace le COD souligné:</p>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-base-200 p-4 rounded-lg">
+                            <p class="mb-2 font-medium">1. Je vois <u>le chien</u>.</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm btn-success" onclick="showPronouns(this, 'le')">le</button>
+                                <button class="btn btn-sm" onclick="showPronouns(this, 'la')">la</button>
+                                <button class="btn btn-sm" onclick="showPronouns(this, 'les')">les</button>
+                            </div>
+                            <div class="hidden mt-3 text-success-content bg-success p-3 rounded-lg" id="pronoun1">
+                                <p>"Je <strong>le</strong> vois."</p>
+                                <p class="text-xs mt-1">Le COD "le chien" est remplacé par "le" (masculin singulier)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-base-200 p-4 rounded-lg">
+                            <p class="mb-2 font-medium">2. Elle prend <u>la valise</u>.</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm" onclick="showPronouns(this, 'le')">le</button>
+                                <button class="btn btn-sm btn-success" onclick="showPronouns(this, 'la')">la</button>
+                                <button class="btn btn-sm" onclick="showPronouns(this, 'les')">les</button>
+                            </div>
+                        </div>
+                        
+                        <!-- More exercises follow the same pattern -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Astuces Section -->
+    <div id="astuces" class="section-content hidden">
+        <div class="card bg-base-100 shadow-xl mb-6">
+            <div class="card-body">
+                <div class="flex items-center gap-3">
+                    <div class="avatar">
+                        <div class="bg-warning/10 text-warning rounded-full w-14 h-14 flex items-center justify-center">
+                            <div class="flex items-center justify-center w-full h-full">💡</div>
+                        </div>
+                    </div>
+                    <h2 class="card-title text-2xl">Astuces & Mémo</h2>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card bg-base-200">
+                        <div class="card-body">
+                            <h3 class="card-title">📝 Les pronoms COD</h3>
+                            <div class="overflow-x-auto">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Personne</th>
+                                            <th>Pronom</th>
+                                            <th>Exemple</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1ère pers. sing.</td>
+                                            <td><strong>me (m')</strong></td>
+                                            <td>Il <strong>me</strong> voit.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2ème pers. sing.</td>
+                                            <td><strong>te (t')</strong></td>
+                                            <td>Je <strong>te</strong> comprends.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3ème pers. masc. sing.</td>
+                                            <td><strong>le (l')</strong></td>
+                                            <td>Tu <strong>le</strong> connais.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3ème pers. fém. sing.</td>
+                                            <td><strong>la (l')</strong></td>
+                                            <td>Nous <strong>la</strong> voyons.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1ère pers. plur.</td>
+                                            <td><strong>nous</strong></td>
+                                            <td>Il <strong>nous</strong> attend.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2ème pers. plur.</td>
+                                            <td><strong>vous</strong></td>
+                                            <td>Je <strong>vous</strong> invite.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3ème pers. plur.</td>
+                                            <td><strong>les</strong></td>
+                                            <td>Tu <strong>les</strong> aimes.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-base-200">
+                        <div class="card-body">
+                            <h3 class="card-title">⚠️ Cas particuliers</h3>
+                            <div class="rounded-lg p-3 mb-2 bg-warning/10">
+                                <h4 class="font-bold">À l'impératif affirmatif</h4>
+                                <p>Le pronom COD se place <strong>après</strong> le verbe avec un tiret.</p>
+                                <p class="font-medium">Ex: "Mange-<strong>la</strong> !"</p>
+                            </div>
+                            
+                            <div class="rounded-lg p-3 mb-2 bg-info/10">
+                                <h4 class="font-bold">Avec un infinitif</h4>
+                                <p>Le pronom COD se place <strong>avant</strong> l'infinitif.</p>
+                                <p class="font-medium">Ex: "Je veux <strong>la</strong> manger."</p>
+                            </div>
+                            
+                            <div class="rounded-lg p-3 bg-success/10">
+                                <h4 class="font-bold">Avec deux pronoms</h4>
+                                <p>Ordre: <strong>me/te/se/nous/vous</strong> + <strong>le/la/les</strong> + verbe</p>
+                                <p class="font-medium">Ex: "Il <strong>me les</strong> donne."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary and Navigation -->
+    <div class="flex flex-col md:flex-row justify-between items-center bg-base-200 p-6 rounded-xl mt-8">
+        <div class="mb-4 md:mb-0">
+            <h3 class="text-xl font-bold">📝 Récapitulatif</h3>
+            <p class="max-w-md">
+                Les COD sont essentiels pour construire des phrases correctes en français. Continuez à pratiquer pour vous améliorer!
+            </p>
+        </div>
+        <div class="flex gap-4">
+            <a href="#" class="btn btn-outline">
+                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                Leçon précédente
+            </a>
+            <a href="#" class="btn btn-primary">
+                Leçon suivante
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+function openSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.section-content').forEach(section => {
+        section.classList.add('hidden');
+    });
+    // Show the selected section
+    document.getElementById(sectionId).classList.remove('hidden');
+    
+    // Update active tab
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('tab-active');
+    });
+    event.currentTarget.classList.add('tab-active');
+}
+
+function markCorrect(btn) {
+    btn.classList.add('btn-success');
+    // Show answer feedback (assuming parent is the container and last child is feedback)
+    const container = btn.closest('.bg-base-200');
+    const feedback = container.querySelector('[id^="answer"]');
+    if (feedback) {
+        feedback.classList.remove('hidden');
+    }
+}
+
+function showPronouns(btn, pronoun) {
+    // Find all sibling buttons and remove success class
+    const siblings = btn.parentElement.querySelectorAll('.btn');
+    siblings.forEach(sib => sib.classList.remove('btn-success'));
+    
+    // Add success class to clicked button
+    btn.classList.add('btn-success');
+    
+    // Show the pronoun explanation
+    const container = btn.closest('.bg-base-200');
+    const feedback = container.querySelector('[id^="pronoun"]');
+    if (feedback) {
+        feedback.classList.remove('hidden');
+    }
+}
+</script>
+
+{% endblock %}
